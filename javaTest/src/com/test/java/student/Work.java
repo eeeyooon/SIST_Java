@@ -5,7 +5,7 @@ import java.util.Scanner;
 //학생 처리 업무 담당 클래스 
 public class Work {
 	
-	//메소드마다 공통으로 쓰는 자원들은 이렇게 맨 위에 빼서 멤버로 만들어주기.
+	//메소드마다 공통으로 쓰는 자원들은 이렇게 맨 위에 빼서 멤버로 만들어 빼주기.
 	
 	private Scanner scan;
 	
