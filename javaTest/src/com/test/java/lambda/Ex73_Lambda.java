@@ -84,7 +84,7 @@ public class Ex73_Lambda {
 									 temp[3],
 									 c);
 			
-				list.add(user);//**** 다 하고 나면 상자에 담아야지
+				list.add(user);//**** 다 하고 나면 상자에 담아야지 **
 			}
 			
 			
@@ -93,6 +93,7 @@ public class Ex73_Lambda {
 			
 			
 			//8명의 사람, 즉 8개의 객체가 존재함 > 이걸 정렬해보자
+			
 			
 			Collections.sort(nums);
 			//얜 에러 x //ArrayList<Integer>
