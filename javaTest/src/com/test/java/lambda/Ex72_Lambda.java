@@ -1,7 +1,7 @@
 package com.test.java.lambda; //04.08
 
 
-public class Ex72_Lambda {
+public class Ex72_Lambda { //04.08
 
 	public static void main(String[] args) {
 		

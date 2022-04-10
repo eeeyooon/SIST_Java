@@ -14,14 +14,15 @@ public class Ex69_LinkedList {
 		//Set > TreeSet
 		//Map > TreeMap
 		
-		//m1();
-		//m2();
-		m3();
+		//m1(); //LinkedList란?
+		//m2(); //LinkedList의 기능
+		m3(); //List의 사용 예시
 		
 		
 	}//main
 
 	private static void m3() {
+		//List의 사용 예시
 		
 		//****복습하기 //TODO 인터페이스 사용 예시 복습하기 (2022. 4. 8. 오전 10:35:32)
 		//인터페이스의 사용 에
@@ -64,6 +65,8 @@ public class Ex69_LinkedList {
 	}
 
 	private static void m2() {
+		//LinkedList의 기능
+		
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		LinkedList<Integer> list2 = new LinkedList<Integer>();
 		
@@ -212,6 +215,7 @@ public class Ex69_LinkedList {
 	}
 
 	private static void m1() {
+		//LinkedList란?
 		
 		//Collection(C) > List(I) > ArrayList(C), LinkedList(C)
 		

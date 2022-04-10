@@ -55,7 +55,7 @@ public class Ex73_Lambda {
 		System.out.println(nums);
 		
 		
-		
+		//User 클래스는 밑에 있음 
 		try {
 			
 			
@@ -121,6 +121,7 @@ public class Ex73_Lambda {
 			
 			System.out.println();
 			
+			//***복습 하기 (정리 꼭)
 			//모르겠으면 일단 외워
 			//TODO Comparator 람다식 (2022. 4. 8. 오후 2:42:59)
 			

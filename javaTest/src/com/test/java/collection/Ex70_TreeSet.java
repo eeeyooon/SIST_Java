@@ -22,13 +22,14 @@ public class Ex70_TreeSet {
 			
 			TreeSet
 			- 이진 트리 구조(B트리)
+			- 자동 정렬 + 부분 집합 뽑아오기 가능
 		
 		
 		
 		*/
 		
 		
-		m1();
+		m1(); //HashSet과 TreeSet의 비교 및 TreeSet의 특징
 		
 	}//main
 

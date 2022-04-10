@@ -23,7 +23,7 @@ public class Ex71_TreeMap {
 		map.put("red", "빨강");
 		map.put("blue", "파랑");
 		
-		System.out.println(map.size());
+		System.out.println(map.size()); //5
 		
 		System.out.println(map); //ABC순으로 정렬되어있음
 		
@@ -43,7 +43,7 @@ public class Ex71_TreeMap {
 		 	
 		//TODO list,set,map 정리 (2022. 4. 8. 오전 11:33:47)
 			
-			
+			복습하기***
 			*** 길이 가변
 			
 			일단 처음 선택은 (1,5,7)임 -잘 모를떄 [8시간] > 상황에 따라 (2,3,4 / 6 / 8) 쓰면 돼 [2시간]
