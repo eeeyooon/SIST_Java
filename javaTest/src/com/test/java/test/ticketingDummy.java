@@ -44,12 +44,9 @@ public class ticketingDummy {
 				//경기일정번호 -> 1~45까지 랜덤
 				//경기 좌석 번호 -> 1~10까지 랜덤
 				
-				Random r = new Random();
+				RandomTicket r = new RandomTicket();
 				String[] blockList = { "A", "B", "C", "D" };
 				String[] seatList = {"A", "B", "C", "D", "E", "F", "G", "H"};
-				int seatNum = (int)(Math.random() * 10 + 1);
-				int gameSeq = (int)(Math.random() * 45 + 1);
-				
 				
 				int bn = (int)(Math.random() * blockList.length); //난수받고
 				r.setBlock(blockList[bn]); //그 난수가 가리키는 구역리스트의 구역
@@ -57,6 +54,9 @@ public class ticketingDummy {
 				
 				int sn = (int)(Math.random() * seatList.length);
 				r.setSeat(seatList[sn]);
+				
+				int seatNum = (int)(Math.random() * 10 + 1);
+				int gameSeq = (int)(Math.random() * 45 + 1);
 				
 				reader.close(); //reader닫기
 				
@@ -83,7 +83,7 @@ public class ticketingDummy {
 }//class
 
 
-class Random {
+class RandomTicket {
 	
 	private String block;
 	

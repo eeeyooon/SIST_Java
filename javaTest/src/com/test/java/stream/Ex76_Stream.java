@@ -1,4 +1,4 @@
-package com.test.java.stream;	//04.13
+package com.test.java.stream;	//04.13 //m4부터 04.14
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import com.test.data.Data;
+import com.test.data.User;
 
 public class Ex76_Stream {
 
@@ -48,14 +49,127 @@ public class Ex76_Stream {
 		
 		//m1();
 		//m2();
-		m3();
-		
-		
+		//m3();
+		//m4(); //04.14
+		m5();
 		
 	}//main
 
 	
 	
+	private static void m5() {
+		
+		//C (클래스 밑에 Student 클래스 생성)
+		List<Student> slist = new ArrayList<Student>();
+		
+		slist.add(new Student("가가가", 100, 90, 80));
+		slist.add(new Student("나나나", 77, 88, 66));
+		slist.add(new Student("다다다", 92, 82, 84));
+		slist.add(new Student("라라라", 100, 92, 88));
+		slist.add(new Student("마마마", 56, 47, 35));
+		
+		slist.stream()
+				.map(s -> {
+					int total = s.getKor() + s.getEng() + s.getMath();
+					if (total >= 180) {
+						return s.getName() + " : 합격";
+					} else {
+						return s.getName() + " : 불합격";
+					}
+				}) //Stream<Student> -> Stream<String>
+				.forEach(result -> System.out.println(result));
+		System.out.println();
+		
+		//>> 이건 이름과 결과가 한번에 나와서 수정하거나 가공이 불편
+		
+		//C-2. Result class 생성
+		
+		
+		slist.stream()
+				.map(s -> {
+					int total = s.getKor() + s.getEng() + s.getMath();
+					
+					Result r = null;
+					
+					if (total >= 180) {
+						r = new Result(s.getName(), "합격");
+					} else {
+						r = new Result(s.getName(), "불합격");
+					} //결과값은 Result Stream이 됨.
+					
+					return r;
+				}).forEach(r -> System.out.printf("%s(%s)\n", r.getName(), r.getResult()));
+	
+			//>> 이름과 결과를 따로따로 생성 (result 객체로)
+	}
+	
+
+
+	private static void m4() {
+		//***꼭 복습하기(중요한내용)
+		//매핑 (파이프) **
+		//- map(), mapXXX()
+		//- 중간처리 파이프
+		//- 변환 작업에 사용함. (*********)
+		//- map() >					앞의 스트림을 처리 후 다른 타입의 스트림을 반환
+		//- distinct(), filter() > 	앞의 스트림 처리 후 동일한 타입의 스트림을 반환
+		
+		
+		List<String> list = Data.getStringList(10);
+		System.out.println(list);
+		
+		System.out.println();
+		
+		list.stream()													//Stream<String>
+					.filter(word -> word.length() <= 3)					//Stream<String>
+					.forEach(word -> System.out.println(word));
+		System.out.println();
+		
+		
+		list.stream()							//Stream<String> : 단어 스트림
+					.map(word -> {				//Stream<Integer> : 단어 길이 스트림 (foreach한테 int만 있는 스트림을 넘겨줌)
+						return word.length();	
+					})
+					.forEach(num -> System.out.println(num));
+		
+		//넘어온 단어를 확인하고 그 단어의 길이(정수값)을 돌려줌. (map은 foreach한테 integer)
+		//반환값은 자유
+		
+		System.out.println();
+		
+		//생략
+		list.stream()
+					//.filter(word -> word.length()>=5) //얘가 위에 있어도 결과는 같음. (내용은 다름!)
+					.map(word -> word.length())
+					.distinct()	//이거 추가하면 -> 중복숫자 생략
+					.filter(length -> length >= 5) //이거 추가하면 5이상인 길이(숫자)만
+					.forEach(length -> System.out.println(length));
+		System.out.println();
+		
+		String[] names = { "홍길동", "홍재석", "테스트", "아무개", "하하하", "호호호", "후후후", "유재석", "박명수" };
+		
+		Arrays.stream(names)		//성은 버리고 이름만
+					.map(name -> name.substring(1)) //1번째 자리부터 끝까지
+					.forEach(name -> System.out.println(name));
+		System.out.println();
+		
+		//매핑 -> A와 B를 연결한다. / 또다른 C로변환한다. (이럴 때 '매핑'이라는 단어가 쓰임)
+		
+		
+		List<User> ulist = Data.getUserList();
+		
+		//map()이 들어가면 의도가 원본 데이터를 다른 형태로 가공하겠다는 것.
+		ulist.stream()
+				//.map(user -> user.getName())	//user객체를 받아서 이름만 돌려줌. (문자열) >> 객체 배열을 문자열로 돌려줌.
+				//.map(user -> user.getAge())     //user객체를 나이만 돌려줌 (int)
+				.map(user -> user.getHeight() >= 180 && user.getWeight() <= 80) //이건 또 조건에 맞으면 true, 아니면 false
+				.forEach(user -> System.out.println(user));
+		
+		System.out.println();
+	}
+
+
+
 	private static void m3() {
 		
 		//중복 제거
@@ -335,11 +449,106 @@ class Cup {
 	
 }
 
+//C 
+class Student {
+	
+	private String name;
+	private int kor;
+	private int eng;
+	private int math;
+	
+	//생성자, Getter&Setter, toString
+	
+	public Student(String name, int kor, int eng, int math) {
+		super();
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
 
 
+	public String getName() {
+		return name;
+	}
 
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
+
+	public int getKor() {
+		return kor;
+	}
+
+
+	public void setKor(int kor) {
+		this.kor = kor;
+	}
+
+
+	public int getEng() {
+		return eng;
+	}
+
+
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
+
+
+	public int getMath() {
+		return math;
+	}
+
+
+	public void setMath(int math) {
+		this.math = math;
+	}
+
+
+	@Override
+	public String toString() {
+		return String.format("Student [name=%s, kor=%s, eng=%s, math=%s]", name, kor, eng, math);
+	}
+	
+	
+}
+
+
+//C-2
+//Stream<Student> -> map() -> Stream<Result> >> 복합 데이터는 객체를 돌려주는게 좋음.
+class Result {
+	private String name;
+	private String result;
+	
+	//생성자 getter/setter까지만 (toString은 안쓸거같아)
+	
+	
+	public Result(String name, String result) {
+		super();
+		this.name = name;
+		this.result = result;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
+	
+	
+	
+}
 
 
 
