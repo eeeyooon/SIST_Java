@@ -1,10 +1,14 @@
-package com.test.java.stream;	//04.13 //m4부터 04.14
+package com.test.java.stream;	//04.13 //m4부터 04.14 //m6부터 04.15
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 import com.test.data.Data;
 import com.test.data.User;
 
@@ -44,6 +48,11 @@ public class Ex76_Stream {
 			- 앞의 스트림의 요소를 최종 처리하는 메소드
 			
 				
+			//04.14 정리
+			
+			스트림 > 최근 JavaScript에서도 유사한 기능 제공함.
+			 
+			 
 		
 		*/
 		
@@ -51,12 +60,373 @@ public class Ex76_Stream {
 		//m2();
 		//m3();
 		//m4(); //04.14
-		m5();
+		//m5(); //실수로 하나 더 만듦 (선생님은 m4()안에 다 넣음)
+		//m6();	//04.15
+		//m7();
+		//m8();
+		//m9();
+		//m10();
+		m11();
+		
 		
 	}//main
 
 	
 	
+	private static void m11() {
+		
+		List<Integer> list = Data.getIntList(10);
+		
+		System.out.println(list);
+		list.stream()						//숫자 10개
+				.filter(n -> n >= 50)		// 숫자 1개만 뽑아서 필터에 넣고, 
+											//그걸 바로 peek에 , filter1,foreach까지 가고나서야 다음 숫자로
+				//.forEach(n -> System.out.println(n)) //-> 얜 최종 파이프라서 중간에 확인하고 싶으면 밑에 주석 달아야돼
+				.peek(n -> System.out.println("@" + n)) //위 상황 때 쓰는게 바로 peek (리턴타입 - 스트림)
+				.filter(n -> n % 2 == 1) //여기서 막히면 @없이 안나옴.
+				.forEach(n -> System.out.println(n));
+		
+		/*
+		
+		@86
+		@65
+		65
+		@85
+		85
+		@86
+
+		*/
+		
+		
+	}
+
+
+
+	private static void m10() {
+		
+		//avg, sum
+		
+		List<Integer> list = Data.getIntList();
+		
+		//총합
+		System.out.println(list.stream().mapToInt(n -> n).sum()); //mapToInt를 써야 sum 쓸 수 있나?
+		//stream() > Stream<Integer> 제네릭을 반환
+		//mapToInt(n -> n) > 준걸 그대로 리턴. 근데 mapToInt는 제네릭이 아닌 int 스트림을 반환해줌.
+		//sum은 제네릭이 아닌 전용타입 숫자 스트림에만 사용가능. (mapToDouble, maptToInt이런거 써서 숫자로 반환해줘야해)
+		//4746
+		
+		System.out.println(list.stream().mapToInt(n -> n).average().getAsDouble()); //얘도 숫자로 받아야함.
+		// >> 얜 Optional로 반환. sum은 아무것도 없으면 0을 반환하는데, 평균은 아무것도 없으면 안나오니까.
+		// Optional이 보기싫으면 get.. - 전용메소드, getAsDouble.. -범용메소드 사용하면 숫자만 나옴.
+		//47.46
+		
+		System.out.println(Data.getUserList().stream()
+						.filter(u -> u.getGender() == 1) //남자만 보고싶을때 filter
+						.mapToInt(u -> u.getHeight())
+						.average().getAsDouble()); 
+		//174.57142857142858
+		
+	}
+
+
+
+	private static void m9() {
+
+		// max, min
+		
+		List<Integer> list = Data.getIntList();
+		
+		//최댓값? 최솟값?
+		System.out.println(Collections.max(list));
+		System.out.println(Collections.min(list));
+		
+		System.out.println(list.stream().max((a,b) -> a - b)); //max와 min은 Comparator 요구
+		//Optional[99]
+		System.out.println(list.stream().min((a,b) -> a - b));
+		//Optional[0]
+		
+		//근데 갑자기 클리어시켜버리면?
+		//list.clear(); //100->0
+		
+		Optional<Integer> result = list.stream().max((a,b) -> a-b);
+		System.out.println("최댓값: " + result);
+		//값이 clear되면 >> // 최댓값: Optional.empty (값이 없는게 반환됨.) = 값이 존재하지 않는다.
+		
+		
+		if (result.isPresent()) {
+			//값이 있는지 먼저 확인
+			System.out.println("최댓값 : " + result.get()); //이걸 쓰면 원래쓰던 int로 형변환해줘
+			//최댓값 : 99
+		} else {
+			System.out.println("빈배열");
+			//clear했으면 빈배열이 뜨게
+		}
+		
+		System.out.println();
+		
+		//Optional? 
+		//- 값형이 null을 가질 수 없는 특성을 보완하기 위해 만들어진 자료형
+		
+		//지역 변수
+		//- 값형 + 참조형 > 초기화를 하지 않으면 사용 불가능!!
+		
+		//멤버 변수
+		//- 생성자가 무조건 초기화를 해버림. >
+		
+		
+		//값형 : null을 가질 수 없다. > 의도적으로 공간을 비울 수 없음.
+								// > 0, 0.0, false...
+		
+		//참조형 : null을 가질 수 있다.
+		
+		
+		//D (맨밑 새로운 클래스 Test)
+		
+		Test t = new Test();
+		System.out.println(t.a); //0
+		System.out.println(t.b); //false
+		//>>값형은 반드시 값이 O. null X
+		
+		System.out.println(t.c); //null
+		System.out.println(t.d); //null
+		
+		//E 메소드 만들어보자
+		
+		User temp = getUser();
+		//int n = getNum();
+		
+		//Optional<T> : 값형이 null을 가질 수 없는 특성을 보완하기 위해 만들어진 자료형
+		
+		
+		//User naxUser = Data.getUserList().stream().max(); //User의 최대, 최소 기준이 뭔지 모름 -> 알려줘야해
+		Optional<User> maxUser = Data.getUserList().stream()
+											.max((u1, u2) -> u1.getAge() - u2.getAge()); 
+		
+		System.out.println(maxUser.get()); //29살인 user가 나옴. 
+		
+	}
+	
+	//E-2 이번엔 int 반환하는 메소드
+//	private static int getNum() {
+//		
+//		boolean condition = true;
+//		
+//		if (condition) {
+//			return 100;
+//		}
+//		
+//		return null // 돌려주기 싫으면 돌려주기 싫은 표현을.. 참조형엔 null반환하는것처럼.
+//				// -> 근데 값형은 안됨..
+//		
+//	}
+	
+	//E 간단한 메소드 만들자
+	
+	private static User getUser() {
+		
+		//실행하면 User객체 반환하는 메소드
+		
+		boolean condition = true; //or flase // 조건이 있는데 그게 만족될지 되지않을지 모르는 상태로 가정.
+		
+		if(condition) {			 // 조건을 만족할때만
+			return new User(); 	//User객체를 반환해주는 메소드
+		}
+		
+		//아무것도 돌려주기 싫어도 돌려줘야해 그럴때 null을 반환
+		
+		return null;
+		
+		//이게 가능한 이유? User는 참조형이고, 참조형은 null을 가질 수 있기 때문에
+		
+		
+	}
+
+
+
+	private static void m8() {
+		
+		//집계, Reduce
+		//- count(), max(), min(), sum(), avg()
+		//- 최종처리 파이프
+		//- 요소들을 가공해서 축소하는 작업, 통계값
+		
+		
+		System.out.println(Data.getIntList().stream().count()); //100
+		System.out.println();
+		
+		
+		//스트림으로 빼볼까?
+		//Stream<User> stream = Data.getUserList().stream(); // User스트림
+		//error
+		
+		//System.out.println("총 인원수 : " + stream.count());
+		//이 count를 셀때 이미 스트림을 써버려서
+		
+		//System.out.println("남자수 : " + stream.filter(u -> u.getGender() == 1).count());
+		//난 이제 스트림 못써..-> 라고 에러나옴.
+		//stream has already been operated upon or closed
+
+		//스트림은 재사용 안된다고 했잖아
+		
+		
+		//Stream으로 빼지말고 다시 리스트로 만들어서 따로따로 스트림 뽑자
+		
+		List<User> list = Data.getUserList();
+		System.out.println("총 인원수 : " + list.stream().count());
+		System.out.println("남자수 : " + list.stream().filter(u -> u.getGender() == 1).count());
+		System.out.println("여자수 : " + list.stream().filter(u -> u.getGender() == 2).count());
+		
+		
+		System.out.println(Data.getIntList().stream().distinct().count()); //중복제거후 남은 숫자개수는?
+		//61
+		
+		
+	}
+
+
+
+	private static void m7() {
+		
+		//매칭
+		//- allMatch(), anyMatch(), noneMatch()
+		//- 최종처리 파이프
+		//- 스트림 요소들이 제시하는 조건을 만족 유무 판단
+		// a. boolean allMatch(Predicate) : 모든 요소가 조건을 100% 만족하는지
+		// b. boolean anyMatch(Predicate) : 일부 요소가 조건을 만족
+		// c. boolean noneMatch(Predicate) : 모든 요소가 조건을 0% 만족? (불만족)
+		
+		//int[] nums = { 2, 4, 6, 8, 10 };
+		//int[] nums = { 1, 3, 5, 7, 9 };
+		int[] nums = { 2, 3, 5, 7, 9 };
+		
+		//요구사항] 배열안에 짝수만 들어있는지?
+		
+		boolean result = false;
+		
+		for (int n : nums) {
+			if (n % 2 == 1) { //홀수를 먼저
+				result = true;
+				break;
+			}
+		}
+		
+		if (result) {
+			System.out.println("홀수 발견!");
+		} else {
+			System.out.println("짝수만");
+		}
+		
+		//allMatch() > && 연산자
+		//1.nums안에 각 요소를 Predicate에 넣어서 검사해라! 
+		//2. 모든 요소가 true를 반환 > 자신도 true
+		//3. 일부 요소가 false를 반환 > 자신은 false
+		//한 놈이라도 false면 false 반환 "allMatch" -> 모든 놈들이 짝수냐 
+		
+		System.out.println(Arrays.stream(nums).allMatch(n -> n % 2 == 0));
+		//지금 검사한 숫자들이 모두 짝수냐
+		//>> true
+		
+		//noneMatch()
+		System.out.println(Arrays.stream(nums).noneMatch(n -> n % 2 == 0));
+		//모두다 불만족하느냐 (모두다 짝수x, 홀수냐)
+		//>> false
+		//한놈이라도 만족하면 false
+		
+		
+		//anyMatch() > || 연산자 정립
+		//1. nums안에 각 요소를 Predicate에 넣어서 검사해라!!
+		//2. 일부 요소가 true를 반환 > 자신도 true
+		//3. 모든 요소가 false를 반환 > 자신도 false
+		
+		//nums = { 2, 4, 6, 8, 10 }; >> true
+		//nums = { 1, 3, 5, 7, 9 }; >> false
+		//nums = { 2, 3, 5, 7, 9 }; >> true
+		System.out.println(Arrays.stream(nums).anyMatch(n -> n%2 == 0));
+		
+		//여자 > 이상형 > User + 175cm + 65kg > anyMatch
+		
+		result = Data.getUserList().stream()
+					.filter(u -> u.getGender() == 1) 
+					.anyMatch(u -> u.getHeight() >= 175 && u.getWeight() >=65); //얜 연달아못써 한번에 써야돼!
+							
+		if (result) {
+			System.out.println("이상형이 있습니다.");
+			
+			Data.getUserList().stream()
+							.filter(u -> u.getGender() == 1)
+							.filter(u -> u.getHeight() >= 175)
+							.filter(u -> u.getWeight() >= 65)
+							.forEach(u -> System.out.println(u));
+			
+		} else {
+			System.out.println("다음 기회에");
+	
+		}
+	}
+
+
+
+	private static void m6() {
+		
+		Data.getUserList().stream()
+				.filter(user -> user.getGender() == 1)
+				.map(user -> user.getWeight())
+				.distinct()	
+				.forEach(weight -> System.out.println(weight));
+		
+		System.out.println();
+		
+		
+		//정렬
+		//- sorted()
+		//- 중간처리 파이프
+		//- 배열, 컬렉션의 sort()와 사용법이 동일
+		// a. 단일값 오름차순 > sort()
+		// b. 단일값 내림차순 > sort (구현)
+		// c. 복합값 오름차순, 내림차순 > sort(구현)
+		
+		
+		List<Integer> nums = Data.getIntList(10);
+		System.out.println(nums);
+		
+		nums.sort((a,b) -> a - b);
+		//위 람다식과 밑 메소드는 동급
+		nums.sort(Comparator.naturalOrder()); //Comparator 객체 반환 > 오름차순 정렬 객체
+		nums.sort(Comparator.reverseOrder()); //내림차순 정렬 객체 (반환)
+		//이건 배열의 본래기능(?)
+		System.out.println(nums);
+		
+		//이번엔 스트림
+		
+		//nums.stream().sorted() > 그냥 오름차순
+		//nums.stream().sorted(구현)
+		
+		//배열에 있는 sort는 원본 배열을 정렬하는거고, 
+		//stream().sorted()는 배열을 정리한게 아니라 스트림을 정렬 > 원본 배열에 영향 x
+		//*****스트림의 조작은 원본 배열에 영향을 미치지 않는다. >> 소비성 행동
+		
+		//먼저 오름차순
+		nums.stream().sorted().forEach(n -> System.out.println(n));	//중간 파이프니까 자료형은 일치
+		
+		
+		System.out.println(nums); //여전히 위에서 배열 내림차순했던 그대로임.
+		
+		
+		nums.stream().sorted((a,b) -> b - a).forEach(n -> System.out.println(n)); //내림 차순
+		
+		System.out.println();
+		
+		Data.getIntList().stream()
+							.distinct()
+							.filter(n -> n % 2 == 0)
+							.sorted()
+							.forEach(n -> System.out.println(n));
+		
+		
+	}
+
+
+
 	private static void m5() {
 		
 		//C (클래스 밑에 Student 클래스 생성)
@@ -550,7 +920,17 @@ class Result {
 	
 }
 
+//D
 
+class Test {
+	
+	public int a;
+	public boolean b;
+	
+	public String c;
+	public User d;
+	
+}
 
 
 
