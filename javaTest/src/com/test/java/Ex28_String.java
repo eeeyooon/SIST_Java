@@ -93,6 +93,7 @@ public class Ex28_String  {
 		String content = "게시판에 글을 작성합니다. 바보야!!";
 		String word = "바보";
 		
+		
 			//Masking -> 금지어만 **처리 하기
 		System.out.println(content.replace(word, "**"));
 				
