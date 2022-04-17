@@ -16,6 +16,7 @@ public class SelectTicketingList {
 	public static void selectTicketingList() {
 		
 		
+		
 		//제일 처음 예매 내역 리스트 나옴
 
 		Scanner sc = new Scanner(System.in);
@@ -27,14 +28,14 @@ public class SelectTicketingList {
 			while(gameListFlag) {	//경기일정 페이지가 나옴
 				ArrayList<String> gameList = new ArrayList<String>();
 			
-			//	int gameSeq = 0;
+			
 	
 				for (Schedule s : Data.scheduleList) {
 					
 					//[경기seq][경기][날짜][시간][경기장]
 					
 						//gameSeq += 1;
-						gameList.add(String.format("%d\t%-9s vs %-9s\t%-10tF %s %-12s\n",
+						gameList.add(String.format("\t\t\t  %d\t%-8s vs %-8s    \t%-10tF    %s    %-12s\n",
 																	s.getSeq(),
 																	s.getTeam1(),
 																	s.getTeam2(),
@@ -46,7 +47,10 @@ public class SelectTicketingList {
 				
 				for (int i=0; i<(gameList.size()/10)+1;) {
 					
-					System.out.println("번호\t\t경기\t\t\t   날짜\t   시간\t  경기장");
+					System.out.println();
+					System.out.println("\t\t\t===============================================================================");
+					System.out.println("\t\t\t 번호\t\t경기\t\t\t   날짜         시간\t   경기장");
+					System.out.println("\t\t\t===============================================================================");
 					for (int j=0+i*10; j<10+i*10; j++) {
 						if (j>=gameList.size()) {
 							break;
@@ -54,7 +58,9 @@ public class SelectTicketingList {
 						System.out.print(gameList.get(j)); //10줄씩 출력
 						
 					}
-					System.out.println("\t\t< 이전 페이지 \t\t 다음 페이지 >");
+					
+					System.out.println("\t\t\t------------------------------------------------------------------------------");
+					System.out.println("\t\t\t\t\t\t< 이전 페이지 \t\t 다음 페이지 >");
 					System.out.println();
 					AdminOutput.ticketListMenu();
 					

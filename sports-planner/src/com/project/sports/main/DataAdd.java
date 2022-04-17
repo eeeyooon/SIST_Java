@@ -15,7 +15,7 @@ public class DataAdd {
 		
 		Calendar c = Calendar.getInstance(); //오늘 날짜
 		c.add(Calendar.DATE, -1); 
-		c.set(2022, 3, 18); //테스트용 오늘의 날짜 바꾸기
+		//c.set(2022, 3, 18); //테스트용 오늘의 날짜 바꾸기
 		Random rnd = new Random();
 		for (Schedule s : Data.scheduleList) {
 			int t1 = 0;

@@ -23,6 +23,8 @@ public class GameDetail {
 				//%d\t
 			
 			
+			
+			
 				AdminOutput.ticketListDetail(); //경기번호 고르라는 메세지와 입력창
 				String input = sc.nextLine(); // 경기번호 입력받기
 				
@@ -33,8 +35,10 @@ public class GameDetail {
 					if (input.equals(Integer.toString(s.getSeq()))) { //입력받은 경기번호와 같은 경기일정 출력
 						gameSeq += 1;
 						hasGame = true;
-						System.out.println("\t   경기\t\t\t날짜\t    시간\t    경기장");
-						System.out.printf("%9s vs %-9s   %-10tF    %s   %-10s\n", 
+						System.out.println("\t\t\t\t  ===============================================================");
+						System.out.println("\t\t\t\t\t   경기\t\t\t날짜\t    시간\t    경기장");
+						System.out.println("\t\t\t\t  ===============================================================");
+						System.out.printf("\t\t\t\t%9s vs %-9s   %-10tF    %s   %-10s\n", 
 								//gameSeq,
 								s.getTeam1(),
 								s.getTeam2(),
@@ -43,7 +47,9 @@ public class GameDetail {
 								s.getPlace());
 						
 						System.out.println();
-					
+						
+						
+						
 					}
 				}
 				
@@ -75,8 +81,10 @@ public class GameDetail {
 						
 						
 						System.out.println();
-						System.out.println("번호\t 이름\t   아이디\t\t 예매좌석");
-						System.out.printf("%d\t%s\t%-16s %s %s\n",
+						System.out.println("\t\t\t\t          =============================================");
+						System.out.println("\t\t\t\t\t     번호      이름\t   아이디\t\t 예매좌석");
+						System.out.println("\t\t\t\t          =============================================");
+						System.out.printf("\t\t\t\t\t     %d       %s\t%-16s %s %s\n",
 											ticketingSeq,
 											ticketName,
 											t.getId(),
@@ -90,7 +98,8 @@ public class GameDetail {
 				
 				if(input.equals("")){
 					
-					System.out.println("내용을 입력해주세요.");
+					System.out.println("\t\t\t\t\t\t 내용을 입력해주세요.");
+					System.out.println();
 					
 				} else if(input.equals("0")) {
 					
@@ -98,7 +107,8 @@ public class GameDetail {
 					gameDetailFlag = false;
 					
 				} else if (hasGame == false) { //입력한 경기번호와 일치하는 경기가 없는경우
-					System.out.println("해당 경기가 존재하지 않습니다.");
+					System.out.println("\t\t\t\t\t\t 해당 경기가 존재하지 않습니다.");
+					System.out.println();
 				}
 				
 				
@@ -106,7 +116,7 @@ public class GameDetail {
 					if (!input.equals("0")) {		//근데 0을 누르지 않았을때 (뒤로가기를 누르면 이 출력문 안나옴)
 						if (hasGame == true) {		//입력한 경기가 경기일정리스트와 일치할때만!
 							System.out.println();
-							System.out.println("해당 경기를 예매한 회원이 없습니다.");
+							System.out.println("\t\t\t\t\t\t 해당 경기를 예매한 회원이 없습니다.");
 							System.out.println();
 						}	
 					}

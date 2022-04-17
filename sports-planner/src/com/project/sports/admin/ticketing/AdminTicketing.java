@@ -8,6 +8,7 @@ public class AdminTicketing {
 
 	public static void adminTicketing() {
 
+		
 		Scanner sc = new Scanner(System.in);
 		boolean adminTicketingFlag = true;
 
@@ -20,7 +21,7 @@ public class AdminTicketing {
 			if (input.equals("1")) { // 1. 예매 내역 확인
 
 				// 예매내역 확인 메소드 (클래스)
-				SelectTicketingList.selectTicketingList();
+				SelectTicketingList.selectTicketingList();;
 
 			} else if (input.equals("2")) { // 2. 매출 확인
 

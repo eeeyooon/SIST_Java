@@ -11,14 +11,6 @@ public class User {
 	private int point;
 	private int warningCount;
 	
-	public int getWarningCount() {
-		return warningCount;
-	}
-
-	public void setWarningCount(int warningCount) {
-		this.warningCount = warningCount;
-	}
-
 	public User(int seq, String name, String jumin, String number, String id, String password,
 			int point, int warningCount) {
 		this.seq = seq;
@@ -87,14 +79,20 @@ public class User {
 		this.point = point;
 	}
 
+	public int getWarningCount() {
+		return warningCount;
+	}
+
+	public void setWarningCount(int warningCoint) {
+		this.warningCount = warningCoint;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"User [seq=%s, name=%s, jumin=%s, number=%s, id=%s, password=%s, point=%s]", seq,
-				name, jumin, number, id, password, point);
+				"User [seq=%s, name=%s, jumin=%s, number=%s, id=%s, password=%s, point=%s, warningCoint=%s]",
+				seq, name, jumin, number, id, password, point, warningCount);
 	}
-	
-	
 	
 	
 	

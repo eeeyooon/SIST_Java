@@ -17,14 +17,7 @@ public class SelectSalesList {
 		//연매출 
 		//리스트 나옴
 		
-
 		Calendar c = Calendar.getInstance();
-		
-		//04-12까지 예매내역있음**
-		
-		
-		c.add(Calendar.DATE, -4); //테스트용 날짜
-		//현재 c == 2022-04-12로 맞추기 (예매내역이 04/12까지밖에 없음)
 		
 		
 		String today = String.format("%tF", c); //오늘 날짜 string 
@@ -70,21 +63,23 @@ public class SelectSalesList {
 		
 		//매출 : 예매경기횟수 * 10000
 		
-		System.out.println();
-		System.out.printf("일매출 : %,d원\n", todayCount * 10000);
-		System.out.println();
 		
-		
-		System.out.printf("월매출 : %,d원\n", monthCount * 10000);
+		System.out.println();
+		System.out.println();
+		System.out.printf("\t\t\t\t\t\t\t 일매출 : %,d원\n", todayCount * 10000);
 		System.out.println();
 		
 		
-		System.out.printf("총매출 : %,d원\n", yearCount * 10000);
+		System.out.printf("\t\t\t\t\t\t\t 월매출 : %,d원\n", monthCount * 10000);
 		System.out.println();
 		
+		
+		System.out.printf("\t\t\t\t\t\t\t 총매출 : %,d원\n", yearCount * 10000);
+		System.out.println();
+		System.out.println();
 		
 		//엔터를 누르면 이전으로 돌아가기
-		System.out.println("엔터(Enter)를 누르시면 이전 메뉴로 돌아갑니다.");
+		System.out.println("\t\t\t\t\t\t 엔터(Enter)를 누르시면 이전 메뉴로 돌아갑니다.");
 	    Scanner scanner = new Scanner(System.in);
 	    scanner.nextLine();
 		

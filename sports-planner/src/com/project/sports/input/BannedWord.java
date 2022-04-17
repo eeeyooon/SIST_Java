@@ -30,5 +30,8 @@ public class BannedWord {
 	public String toString() {
 		return String.format("BannedWord [seq=%s, bannedWord=%s]", seq, bannedWord);
 	}
+	
+	
+	
 
 }

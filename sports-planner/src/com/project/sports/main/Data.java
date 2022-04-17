@@ -184,7 +184,7 @@ public class Data {
 						, Integer.parseInt(temp[4].split("-")[2]));
 				Point p = new Point(Integer.parseInt(temp[0])
 									, temp[1]
-									, Integer.parseInt(temp[2])
+									, temp[2]
 									, temp[3]
 									, c);
 				
@@ -316,7 +316,8 @@ public class Data {
 				
 				YearTeam y = new YearTeam(Integer.parseInt(temp[0])
 										, temp[1]
-										, temp[2]);
+										, temp[2]
+										, temp[3]);
 				yearTeamList.add(y);
 				
 			}
@@ -475,11 +476,12 @@ public class Data {
 			
 			for (Point s : pointList) {
 				
-				String line = String.format("%d●%s●%d●%s\n"
+				String line = String.format("%d●%s●%s●%s●%tF\n"
 											, s.getSeq()
 											, s.getId()
 											, s.getChangePoint()
-											, s.getDetail());
+											, s.getDetail()
+											, s.getDate());
 				writer.write(line);
 				
 			}
@@ -547,7 +549,7 @@ public class Data {
 	              
 	              if(p.getPosition().equals("타자")) {
 	                 
-	                 String line = String.format("%d●%d●%s●%s●%s●%s●%s●%s●%.2f●%d●%d●%d\n"
+	                 String line = String.format("%d●%d●%s●%s●%s●%s●%s●%s●%.2f●%d●%d●%d●%d\n"
 	                                      , p.getSeq()
 	                                      , p.getTeamSeq()
 	                                      , p.getYear()
@@ -585,10 +587,11 @@ public class Data {
 	           writer = new BufferedWriter(new FileWriter(DataPath.YEARTEAM));
 	           
 	           for (YearTeam s : yearTeamList) {
-	              String line = String.format("%d●%s●%s\n"
+	              String line = String.format("%d●%s●%s●%s\n"
 	            		  								, s.getSeq()
 	            		  								, s.getType()
-	            		  								, s.getTeamName());
+	            		  								, s.getTeamName()
+	            		  								, s.getStarting());
 	              writer.write(line);
 	           }
 	           writer.close();

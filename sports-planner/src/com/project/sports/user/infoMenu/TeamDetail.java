@@ -14,6 +14,7 @@ public class TeamDetail {
 	public static void teamDetailInfo() {
 		
 		
+		
 		Scanner sc = new Scanner(System.in);
 		boolean teamDetailFlag = true;
 		
@@ -83,40 +84,48 @@ public class TeamDetail {
 	public static void twinsDetail ()  {
 		
 		
-		System.out.println("1. LG 트윈스 선수 목록");
+		System.out.println("\t\t\t\t\t\t   1. LG 트윈스 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t [선수번호]  [이름]    [포지션]");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//LG트윈스 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 1 && p.getYear().equals("2022")) { //팀이 1(lg)이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
 	
 	private static void bearsDetail() {
 		
-		System.out.println("2. 두산 베어스 선수 목록");
+		System.out.println("\t\t\t\t\t\t   2. 두산 베어스 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//두산 베어스 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 2 && p.getYear().equals("2022")) { //팀이 2이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
@@ -124,53 +133,65 @@ public class TeamDetail {
 	
 	private static void giantsDetail() {
 		
-		System.out.println("3. 롯데 자이언츠 선수 목록");
+		System.out.println("\t\t\t\t\t\t 3. 롯데 자이언츠 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
+		
 		
 		//롯데 자이언츠 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 3 && p.getYear().equals("2022")) { //팀이 3이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
-		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 	}
 	
 	
 	private static void landersDetail() {
 		
-		System.out.println("4. SSG 랜더스 선수 목록");
+		System.out.println("\t\t\t\t\t\t 4. SSG 랜더스 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
+		
 		
 		//SSG 랜더스 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 4 && p.getYear().equals("2022")) { //팀이 4이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 	}
 	
 	private static void tigersDetail() {
 		
-		System.out.println("5. KIA 타이거즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t 5. KIA 타이거즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//KIA 타이거즈 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 5 && p.getYear().equals("2022")) { //팀이5이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
@@ -183,80 +204,97 @@ public class TeamDetail {
 	
 	private static void heroesDetail() {
 		
-		System.out.println("6. 키움 히어로즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t 6. 키움 히어로즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//키움 히어로즈 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 6 && p.getYear().equals("2022")) { //팀이 6이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
 	
 	private static void dinosDetail() {
 
-		System.out.println("7. NC 다이노스 선수 목록");
+		System.out.println("\t\t\t\t\t\t 7. NC 다이노스 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
+
 		
 		//NC 다이노스 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 7 && p.getYear().equals("2022")) { //팀이 7이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
 	
 	private static void wizDetail() {
 		
-		System.out.println("8. KT 위즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t 8. KT 위즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//KT 위즈 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 8 && p.getYear().equals("2022")) { //팀이 8이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
 	
 	private static void lionsDetail() {
 
-		System.out.println("9. 삼성 라이온즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t 9. 삼성 라이온즈 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//삼성 라이온즈 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 9 && p.getYear().equals("2022")) { //팀이 9이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}
@@ -264,20 +302,24 @@ public class TeamDetail {
 	
 	private static void eaglesDetail() {
 		
-		System.out.println("10. 한화 이글스 선수 목록");
+		System.out.println("\t\t\t\t\t\t 10. 한화 이글스 선수 목록");
+		System.out.println("\t\t\t\t\t\t===========================");
+		System.out.println("\t\t\t\t\t\t  선수번호   이름      포지션");
+		System.out.println("\t\t\t\t\t\t===========================");
 		
 		//한화 이글스 선수단 목록(2022년)
 		for (Player p : Data.playerList) {
 			
 			if (p.getTeamSeq() == 10 && p.getYear().equals("2022")) { //팀이 10이고, 2022년일때
 				
-				System.out.printf("%3s %3s %3s\n",
+				System.out.printf("\t\t\t\t\t\t  %3s     %3s     %3s\n",
 									p.getPlayerNum(), 	//선수번호
 									p.getName(),		//이름
 									p.getPosition());	//포지션
 			}
 		}
 		
+		System.out.println("\t\t\t\t\t\t---------------------------");
 		System.out.println();
 		
 	}

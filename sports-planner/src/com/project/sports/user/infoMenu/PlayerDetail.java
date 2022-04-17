@@ -23,6 +23,7 @@ public class PlayerDetail {
 				
 				for (Player p : Data.playerList) {
 					
+					
 						
 						if (input.equals(p.getName())) { //입력받은 선수이름과 같은 이름이 있으면
 							
@@ -34,12 +35,14 @@ public class PlayerDetail {
 							//[선수번호, 이름, 키, 몸무게, 포지션]
 							//맨 앞에 팀이름 추가
 							
-							System.out.println("팀\t\t선수번호\t이름\t키\t몸무게\t포지션");
+							System.out.println("\t\t\t\t ===============================================================");
+							System.out.println("\t\t\t\t\t  [팀] \t [선수번호]  [이름]    [키]  [몸무게]  [포지션]");
+							System.out.println("\t\t\t\t ===============================================================");
 							//System.out.print(); //팀이름
 							
 							int teamSeq = p.getTeamSeq(); //팀 번호를 받고 TeamName()으로 이동
 							
-							System.out.printf("%-7s\t%3s\t%3s\t%3s\t%3s\t%3s\n",
+							System.out.printf("\t\t\t\t      %-7s   %3s \t   %3s     %3s   %3s     %3s\n",
 												TeamName(teamSeq),
 												p.getPlayerNum(),
 												p.getName(),
@@ -47,6 +50,8 @@ public class PlayerDetail {
 												p.getWeight(),
 												p.getPosition());
 							System.out.println();
+							System.out.println();
+							
 							
 							
 							//이젠 기록 정보
@@ -56,26 +61,30 @@ public class PlayerDetail {
 								
 								if (p.getPosition().equals("타자")) { //포지션이 타자일때
 									
-									System.out.println("타율\t홈런\t안타\t타점\t득점");
-									System.out.printf("%.2f\t%3d\t%3d\t%3d\t%3d\n", 
+									System.out.println("\t\t\t\t ===============================================================");
+									System.out.println("\t\t\t\t\t\t[타율]\t[홈런]\t[안타]\t[타점]\t[득점]");
+									System.out.println("\t\t\t\t ===============================================================");
+									System.out.printf("\t\t\t\t\t\t %.2f\t%3d\t%3d\t%3d\t%3d\n", 
 															p.getBattingAvg(),
 															p.getHomeRun(),
 															p.getHit(),
 															p.getHitScore(),
 															p.getMakeScore());
 									System.out.println();
-									
+									//System.out.println("\t\t\t\t ---------------------------------------------------------------");
 									
 								} else if(p.getPosition().equals("투수")) { //포지션이 투수일때
 									
-									System.out.println("평균자책\t승수\t이닝\t탈삼진");
-									System.out.printf("%.2f\t%3d\t%3d\t%3d\n", 
+									System.out.println("\t\t\t\t ===============================================================");
+									System.out.println("\t\t\t\t\t\t[평균자책]\t  [승수]\t[이닝]\t[탈삼진]");
+									System.out.println("\t\t\t\t ===============================================================");
+									System.out.printf("\t\t\t\t\t\t %.2f\t  %3d\t%3d\t%3d\n", 
 															p.getEarnedRunAvg(),
 															p.getWin(),
 															p.getInning(),
 															p.getThreeOut());
 									System.out.println();
-									
+									//System.out.println("\t\t\t\t ---------------------------------------------------------------");
 								} 
 							} 
 						} //이름이 일치하는지 확인하는 if문

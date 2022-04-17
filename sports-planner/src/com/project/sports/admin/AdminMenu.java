@@ -2,9 +2,10 @@ package com.project.sports.admin;
 
 import java.util.Scanner;
 import com.project.sports.admin.bannedword.AdminBannedWord;
-import com.project.sports.admin.bannedword.BannedWordMenu;
-import com.project.sports.admin.ticketing.AdminTicketing;
+import com.project.sports.admin.teamPlayer.TeamPlayer;
+import com.project.sports.admin.userinfo.ManageUser;
 import com.project.sports.output.Output;
+import com.project.sports.user.community.Community;
 
 public class AdminMenu {
 
@@ -22,9 +23,11 @@ public class AdminMenu {
 	
 			if(input.equals("1")) { //1. 팀/선수 정보관리
 				
+				TeamPlayer.teamPlyaer();
 				
 			} else if(input.equals("2")) { //2.회원 관리
-				
+				ManageUser.mFlag = true;
+				ManageUser.manageUserMain();
 				
 			} else if(input.equals("3")) { //3. 예매 관리
 				
@@ -32,13 +35,24 @@ public class AdminMenu {
 				
 			} else if(input.equals("4")) { //4. 경기 관리
 				
-			} else if(input.equals("5")) {	//5. 커뮤니티 관리
-				//1. 커뮤니티 관리
-				//2. 금지어 관리
+				AdminSchedule.adminSchedule();
 				
-				//일단 금지어 관리만
-				AdminBannedWord.bannedWord();
-				//BannedWordMenu.bannedWordMenu();
+			} else if (input.equals("5")) { //5. 커뮤니티 관리
+				
+				while (true) {
+					
+					AdminOutput.commubityorBannedWord();
+					input = sc.nextLine();
+					if (input.equals("1")) {
+						Community.communityMenu();					
+					} else if (input.equals("2")) {
+						AdminBannedWord.bannedWord();
+					} else if (input.equals("0")) {
+						break;
+					} else {
+						System.out.println("잘못 입력하셨습니다.");
+					}
+				}
 				
 			} else if(input.equals("0")){
 				

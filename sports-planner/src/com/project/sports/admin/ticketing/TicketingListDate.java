@@ -21,9 +21,13 @@ public class TicketingListDate {
 		
 		while(dateSearchFlag) {	//예매 내역 확인에서 날짜 검색을 선택했을 때
 			
-				System.out.println("예매내역을 확인할 경기의 날짜를 검색해주세요. (0. 뒤로가기)");
-				System.out.println("날짜를 \"-\"로 구분하여 입력해주세요. (예시 : 04-08)");
-				System.out.print("날짜 입력 : ");
+				System.out.println("\t\t\t\t ┌──────────────────────────────────────────────────────────────┐");
+				System.out.println("\t\t\t\t │\t예매내역을 확인할 경기의 날짜를 검색해주세요. (0. 뒤로가기)\t	│");
+				System.out.println("\t\t\t\t │\t날짜를 \\\"-\\\"로 구분하여 입력해주세요. (예시 : 04-08)\t	│");
+				System.out.println("\t\t\t\t └──────────────────────────────────────────────────────────────┘");
+				System.out.print("\t\t\t\t\t\t\t 날짜 입력 : ");
+			
+
 				String input = sc.nextLine(); // 날짜 입력받기
 				//날짜 입력시 유효성 검사는 안함(04-01형식을 지키지 않아도 진행됨.)
 				
@@ -69,24 +73,28 @@ public class TicketingListDate {
 								//번호 아이디 구역 좌석
 								
 								System.out.println();
-								System.out.println("------------------------------------------------");
-								System.out.println("\t   경기\t \t\t시간\t 경기장");
-								System.out.printf("%-9s vs   %-9s   %s   %s", 
+								
+								System.out.println("\t\t\t\t\t===================================================");
+								System.out.println("\t\t\t\t\t\t     경기\t    \t\t  시간\t    경기장");
+								System.out.println("\t\t\t\t\t===================================================");
+								System.out.printf("\t\t\t\t\t %-9s vs   %-9s   %s   %s", 
 																		s.getTeam1(),
 																		s.getTeam2(),
 																		s.getTime(),
 																		s.getPlace());
 								System.out.println();
 								System.out.println();
-								System.out.println("번호\t아이디\t\t구역  좌석");
-								System.out.printf("%d\t%-16s%s  %s", 
+								System.out.println("\t\t\t\t\t\t==================================");
+								System.out.println("\t\t\t\t\t\t 번호  \t아이디\t\t구역  좌석");
+								System.out.println("\t\t\t\t\t\t==================================");
+								System.out.printf("\t\t\t\t\t\t  %d\t%-16s%s  %s", 
 																		ticketingSeq,
 																		t.getId(),
 																		t.getBlock(),
 																		t.getSeatNum());
 								System.out.println();
 								
-								System.out.println("------------------------------------------------");
+								System.out.println("\t\t\t\t\t\t----------------------------------");
 								
 								System.out.println();
 								
@@ -104,8 +112,9 @@ public class TicketingListDate {
 				
 				
 				if(input.equals("")){
-					
-					System.out.println("내용을 입력해주세요.");
+					System.out.println();
+					System.out.println("\t\t\t\t\t\t      내용을 입력해주세요.");
+					System.out.println();
 					
 				} else if(input.equals("0")) {
 					
@@ -113,12 +122,14 @@ public class TicketingListDate {
 					dateSearchFlag = false;
 					
 				} else if (hasGame == false) {
-					System.out.println("해당 날짜의 경기가 존재하지 않습니다.");
+					System.out.println();
+					System.out.println("\t\t\t\t\t\t  해당 날짜의 경기가 존재하지 않습니다.");
 					System.out.println();
 					Output.pause();
 					
 				} else if (hasTicketing == false) { //예매내역이 존재하지 않으면
-					System.out.println("예매 내역이 존재하지 않습니다.");
+					System.out.println();
+					System.out.println("\t\t\t\t\t\t  예매 내역이 존재하지 않습니다.");
 					System.out.println();
 					Output.pause();
 				} else {

@@ -6,11 +6,11 @@ public class Point {
 	
 	private int seq;
 	private String id;
-	private int changePoint;
+	private String changePoint;
 	private String detail;
 	private Calendar date;
 	
-	public Point(int seq, String id, int changePoint, String detail, Calendar date) {
+	public Point(int seq, String id, String changePoint, String detail, Calendar date) {
 		this.seq = seq;
 		this.id = id;
 		this.changePoint = changePoint;
@@ -34,11 +34,11 @@ public class Point {
 		this.id = id;
 	}
 
-	public int getChangePoint() {
+	public String getChangePoint() {
 		return changePoint;
 	}
 
-	public void setChangePoint(int changePoint) {
+	public void setChangePoint(String changePoint) {
 		this.changePoint = changePoint;
 	}
 
