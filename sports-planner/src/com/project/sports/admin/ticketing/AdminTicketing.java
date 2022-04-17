@@ -20,12 +20,13 @@ public class AdminTicketing {
 			if (input.equals("1")) { // 1. 예매 내역 확인
 
 				// 예매내역 확인 메소드 (클래스)
-				SelectTicketingList.selectTicketingList();;
+				SelectTicketingList.selectTicketingList();
 
 			} else if (input.equals("2")) { // 2. 매출 확인
 
 				// 매출 확인 메소드 (클래스)
-
+				SelectSalesList.selectSales();
+				
 			} else if (input.equals("0")) {
 
 				Output.backMsg();

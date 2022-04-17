@@ -11,7 +11,7 @@ import com.project.sports.output.Output;
 public class SelectTicketingList {
 
 	//예매내역 클래스
-	//예매내역 확인을 눌렀을때
+	//예매내역 확인을 선택했을 때
 	
 	public static void selectTicketingList() {
 		

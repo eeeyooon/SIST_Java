@@ -1,6 +1,7 @@
 package com.project.sports.admin;
 
 import java.util.Scanner;
+import com.project.sports.admin.bannedword.AdminBannedWord;
 import com.project.sports.admin.ticketing.AdminTicketing;
 import com.project.sports.output.Output;
 
@@ -31,6 +32,11 @@ public class AdminMenu {
 			} else if(input.equals("4")) { //4. 경기 관리
 				
 			} else if(input.equals("5")) {	//5. 커뮤니티 관리
+				//1. 커뮤니티 관리
+				//2. 금지어 관리
+				
+				//일단 금지어 관리만
+				AdminBannedWord.bannedWord();
 				
 			} else if(input.equals("0")){
 				

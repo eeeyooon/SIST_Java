@@ -9,6 +9,8 @@ public class TeamDetail {
 
 	//팀 상세보기
 	
+	//public static List<Team>teamList;
+	
 	public static void teamDetailInfo() {
 		
 		

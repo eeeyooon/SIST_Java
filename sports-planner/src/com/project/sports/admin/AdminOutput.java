@@ -44,6 +44,16 @@ public class AdminOutput {
 		
 	}
 	
+	public static void bannedWordMenu() {
+		
+		System.out.println("1. 금지어 등록");
+		System.out.println("2. 금지어 수정");
+		System.out.println("3. 금지어 삭제");
+		Output.back();
+		Output.input();
+		
+	}
+	
 
 	
 	
