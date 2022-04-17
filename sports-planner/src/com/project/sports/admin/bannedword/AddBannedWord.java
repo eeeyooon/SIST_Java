@@ -7,6 +7,7 @@ import com.project.sports.output.Output;
 
 public class AddBannedWord {
 
+	//public static ArrayList<BannedWord> bannedWordList;
 	public static void addBannedWord () {
 		
 		//등록됨. -> txt파일에 save하는건 아직 안함!

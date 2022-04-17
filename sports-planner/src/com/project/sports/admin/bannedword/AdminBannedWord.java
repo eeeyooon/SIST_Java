@@ -1,6 +1,7 @@
 package com.project.sports.admin.bannedword;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import com.project.sports.admin.AdminOutput;
 import com.project.sports.input.BannedWord;
@@ -8,12 +9,13 @@ import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
 public class AdminBannedWord {
-	public static ArrayList<BannedWord> bannedWordList = new ArrayList<BannedWord>();
+	
 
+	//public static List<BannedWord> BannedWordList = new ArrayList<BannedWord>();
+	public static List<BannedWord> list;// = new ArrayList<BannedWord>();
+	
 	public static void bannedWord() {
-		
-		
-		//금지어 목록 출력
+	//ArrayList<BannedWord> bannedWordList;
 		
 		
 		Scanner sc = new Scanner(System.in);
@@ -25,12 +27,12 @@ public class AdminBannedWord {
 			
 			//금지어 목록 출력
 			
-			System.out.println("번호 금지어");
+			BannedWordList = new ArrayList<BannedWord>();
+			
 			for (BannedWord b : Data.bannedWordList) {
 				
-				
 				System.out.printf("%d %s\n", b.getSeq(), b.getBannedWord());
-				bannedWordList.add(b); //다 넣기
+				BannedWordList.add(b); //다 넣기
 				
 				
 			}
@@ -50,6 +52,7 @@ public class AdminBannedWord {
 
 			} else if (input.equals("2")) { // 2. 금지어 수정
 
+				EditBannedWord.editBannedWord();
 				
 			} else if (input.equals("3")) { //3. 금지어 삭제
 				
