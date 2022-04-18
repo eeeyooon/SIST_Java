@@ -4,7 +4,7 @@ import com.project.sports.output.Output;
 
 public class AdminOutput {
 
-	public static void AdminMenu() { //1.팀 정보 상세보기 //2. 선수 검색
+	public static void AdminMenu() { 
 		
 		System.out.println("\t\t\t\t\t\t ┌──────────────────────────┐");
 		System.out.println("\t\t\t\t\t\t │     1. 팀/선수 정보 관리	    │");

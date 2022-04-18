@@ -76,6 +76,19 @@ public class Community {
 		
 		try {
 			
+			 for (BlackList b : Data.blackListList) {
+	               if (b.getId().equals(UserLogin.userData.getId())) {
+	            	   
+	            	   					 						System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+	            	    System.out.println("\t\t\t\t\t\t 접근이 제한된 사용자입니다.");
+						System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+						Output.pause();
+						
+	                  return;
+	               }
+	            }
+			
+			
 			Scanner sc = new Scanner(System.in);
 			
 			boolean flag = true;
