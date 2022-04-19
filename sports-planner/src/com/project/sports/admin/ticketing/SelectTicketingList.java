@@ -8,11 +8,18 @@ import com.project.sports.input.Schedule;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 예매내역 확인 메뉴 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class SelectTicketingList {
 
 	//예매내역 클래스
 	//예매내역 확인을 선택했을 때
-	
+	/**
+	 * 예매내역 확인 메뉴와 경기일정 리스트를 출력합니다.
+	 */
 	public static void selectTicketingList() {
 		
 		

@@ -5,8 +5,15 @@ import com.project.sports.input.Player;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 선수검색 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class PlayerDetail {
-
+	/**
+	 * 선수 이름을 입력받고, 그 선수의 정보를 출력합니다.
+	 */
 	public static void playerSearch() {
 		
 		

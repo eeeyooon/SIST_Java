@@ -6,10 +6,18 @@ import com.project.sports.input.Schedule;
 import com.project.sports.input.Ticketing;
 import com.project.sports.main.Data;
 
+/**
+ * 매출 확인 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class SelectSalesList {
 
 	//매출 확인을 선택했을때
 	
+	/**
+	 * 일매출, 월매출, 연매출이 출력됩니다.
+	 */
 	public static void selectSales () {
 		
 		//일매출

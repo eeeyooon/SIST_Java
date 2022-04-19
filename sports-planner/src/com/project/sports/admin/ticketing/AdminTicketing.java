@@ -4,8 +4,15 @@ import java.util.Scanner;
 import com.project.sports.admin.AdminOutput;
 import com.project.sports.output.Output;
 
+/**
+ * 예매관리 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class AdminTicketing {
-
+	/**
+	 * 예매 관리 메뉴를 출력받고, 사용자가 선택한 메뉴로 이동합니다.
+	 */
 	public static void adminTicketing() {
 
 		

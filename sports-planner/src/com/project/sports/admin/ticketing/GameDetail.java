@@ -8,8 +8,15 @@ import com.project.sports.input.User;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 예매내역 상세보기 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class GameDetail {
-
+	/**
+	 * 전체 경기 일정을 출력하고 사용자가 선택한 경기의 예매내역을 출력합니다.
+	 */
 	public static void gameDetail() {
 		
 		

@@ -5,8 +5,16 @@ import com.project.sports.input.BannedWord;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 금지어 수정 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class EditBannedWord {
 
+	/**
+	 * 수정할 금지어의 번호와 내용을 입력받고, 그 금지어를 입력받은 내용으로 수정합니다.
+	 */
 	public static void editBannedWord() {
 
 		Scanner sc = new Scanner(System.in);

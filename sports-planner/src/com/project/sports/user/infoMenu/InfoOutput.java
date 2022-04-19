@@ -1,8 +1,14 @@
 package com.project.sports.user.infoMenu;
 
-
+/**
+ * 정보메뉴 출력문 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class InfoOutput {
-
+	/**
+	 * 정보 메뉴를 출력합니다.
+	 */
 	public static void infoMenu() { //1.팀 정보 상세보기 //2. 선수 검색
 		System.out.println("\t\t\t\t\t\t ┌─────────────────────────┐");
 		System.out.println("\t\t\t\t\t\t │     1. 팀 정보 상세보기	   │");
@@ -16,7 +22,9 @@ public class InfoOutput {
 	}
 	
 	
-	
+	/**
+	 * 상세정보 확인 팀 입력문을 출력합니다.
+	 */
 	public static void teamDetailMessage() {
 		
 
@@ -29,7 +37,9 @@ public class InfoOutput {
 		
 	}
 	
-	
+	/**
+	 * 검색할 선수 이름 입력문을 출력합니다.
+	 */
 	public static void playerDetailMessage() {
 		
 		
@@ -41,7 +51,9 @@ public class InfoOutput {
 		
 	}
 	
-	
+	/**
+	 * 전체 팀 목록을 출력합니다.
+	 */
 	public static void teamList() {
 		
 

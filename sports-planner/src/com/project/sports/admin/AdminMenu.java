@@ -7,8 +7,15 @@ import com.project.sports.admin.userinfo.ManageUser;
 import com.project.sports.output.Output;
 import com.project.sports.user.community.Community;
 
+/**
+ * 관리자 메뉴 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class AdminMenu {
-
+	/**
+	 * 관리자 메뉴를 출력하고 사용자가 선택한 메뉴로 이동합니다.
+	 */
 	public static void selectAdminMenu() {
 		
 	Scanner sc = new Scanner(System.in);

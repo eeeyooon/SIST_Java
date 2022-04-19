@@ -2,8 +2,16 @@ package com.project.sports.admin;
 
 import com.project.sports.output.Output;
 
+/** 
+ * 관리자 출력문 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class AdminOutput {
-
+	
+	/**
+	 * 관리자 메뉴를 출력합니다.
+	 */
 	public static void AdminMenu() { 
 		
 		System.out.println("\t\t\t\t\t\t ┌──────────────────────────┐");
@@ -16,7 +24,10 @@ public class AdminOutput {
 		System.out.println("\t\t\t\t\t\t └──────────────────────────┘");
 		System.out.print("\t\t\t\t\t\t\t 메뉴 번호 : ");
 	}
-
+	
+	/**
+	 * 예매 관리 메뉴를 출력합니다.
+	 */
 	public static void AdminTicketingMenu() {
 		
 		System.out.println("\t\t\t\t\t\t ┌─────────────────────────┐");
@@ -28,6 +39,9 @@ public class AdminOutput {
 		
 	}
 	
+	/**
+	 * 종목 선택하기를 출력합니다.
+	 */
 	public static void selectTypeMenu() {
 		System.out.println("\t\t\t\t\t\t  ┌──────────────────────┐");
 		System.out.println("\t\t\t\t\t\t  │      1. 야구	         │");
@@ -39,6 +53,9 @@ public class AdminOutput {
 		System.out.print("\t\t\t\t\t\t\t 메뉴 번호 : ");
 	}
 	
+	/**
+	 * 경기 관리 메뉴를 출력합니다.
+	 */
 	public static void scheduleMenu() {
 		System.out.println("\t\t\t\t\t ┌──────────────────────────────────┐");
 		System.out.println("\t\t\t\t\t │            1. 경기 등록  	    │");
@@ -49,6 +66,9 @@ public class AdminOutput {
 		Output.input();
 	}
 	
+	/**
+	 * 경기 검색 메뉴를 출력합니다.
+	 */
 	public static void scheduleEditMenu() {
 		System.out.println("\t\t\t\t\t ┌──────────────────────────────────┐");
 		System.out.println("\t\t\t\t\t │	   페이지 변경 <,> 입력	    │");
@@ -61,6 +81,9 @@ public class AdminOutput {
 		
 	}
 	
+	/**
+	 * 경기 수정 메뉴를 출력합니다.
+	 */
 	public static void scheduleEditSelect() {
 		System.out.println("\t\t\t\t\t ┌──────────────────────────────────┐");
 		System.out.println("\t\t\t\t\t │             1. 경기팀	   	    │");
@@ -73,6 +96,9 @@ public class AdminOutput {
 		Output.input();
 	}
 	
+	/**
+	 * 블랙리스트 메뉴를 출력합니다.
+	 */
 	public static void AdminBlacklistMenu() {
 	      
 		System.out.println("\t\t\t\t\t ┌────────────────────────────────────────┐");
@@ -86,6 +112,9 @@ public class AdminOutput {
 	      
 	}
 	
+	/**
+	 * 회원관리 메뉴를 출력합니다.
+	 */
    public static void AdminManageUserMenu() {
 	      
 	   System.out.println("\t\t\t\t\t ┌────────────────────────────────────────┐");
@@ -99,6 +128,9 @@ public class AdminOutput {
 		System.out.print("\t\t\t\t\t\t기호 또는 메뉴 번호 : ");
    }
    
+   /**
+    * 예매내역 확인 경기번호 입력문을 출력합니다.
+    */
    public static void ticketListDetail() {
 	      
 	   	  System.out.println("\t\t\t\t ┌──────────────────────────────────────────────────────────────┐");
@@ -108,6 +140,9 @@ public class AdminOutput {
 	      
    }
    
+   /**
+    * 예매내역 확인 메뉴를 출력합니다.
+    */
    public static void ticketListMenu() {
 	      
 	    System.out.println("\t\t\t\t\t\t  ┌─────────────────────────────┐");
@@ -121,6 +156,9 @@ public class AdminOutput {
 	      
 	      
 	   }
+   /**
+    * 금지어 관리메뉴를 출력합니다.
+    */
    public static void bannedWordMenu() {
 	   	  
 	    System.out.println("\t\t\t\t\t\t  ┌─────────────────────────────┐");
@@ -133,6 +171,9 @@ public class AdminOutput {
 	      
 	   }
    
+   /**
+    * 커뮤니티 관리 메뉴를 출력합니다.
+    */
    public static void commubityorBannedWord() {
 	   
 	   System.out.println("\t\t\t\t\t\t  ┌─────────────────────────────┐");

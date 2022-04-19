@@ -5,12 +5,20 @@ import com.project.sports.input.Player;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 팀 상세보기 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class TeamDetail {
 
 	//팀 상세보기
 	
 	//public static List<Team>teamList;
 	
+	/**
+	 * 상세보기를 할 팀의 번호를 입력받고, 그 팀의 선수 목록을 출력합니다.
+	 */
 	public static void teamDetailInfo() {
 		
 		
@@ -81,6 +89,9 @@ public class TeamDetail {
 	}//teamDetail.info
 	
 	//2022년 선수단 목록 [선수번호][이름][포지션]
+	/**
+	 * 엘지 트윈스 선수단 목록입니다.
+	 */
 	public static void twinsDetail ()  {
 		
 		
@@ -106,6 +117,9 @@ public class TeamDetail {
 		
 	}
 	
+	/** 
+	 * 두산 베어스 선수단 목록입니다.
+	 */
 	private static void bearsDetail() {
 		
 		System.out.println("\t\t\t\t\t\t   2. 두산 베어스 선수 목록");
@@ -130,7 +144,9 @@ public class TeamDetail {
 		
 	}
 	
-	
+	/**
+	 * 롯데 자이언츠 선수단 목록입니다.
+	 */
 	private static void giantsDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 3. 롯데 자이언츠 선수 목록");
@@ -154,7 +170,9 @@ public class TeamDetail {
 		System.out.println();
 	}
 	
-	
+	/**
+	 * SSG 랜더스 선수단 목록입니다.
+	 */
 	private static void landersDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 4. SSG 랜더스 선수 목록");
@@ -179,6 +197,9 @@ public class TeamDetail {
 		System.out.println();
 	}
 	
+	/**
+	 * 기아 타이거즈 선수단 목록입니다.
+	 */
 	private static void tigersDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 5. KIA 타이거즈 선수 목록");
@@ -202,6 +223,9 @@ public class TeamDetail {
 		
 	}
 	
+	/**
+	 * 키움 히어로즈 선수단 목록입니다.
+	 */
 	private static void heroesDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 6. 키움 히어로즈 선수 목록");
@@ -226,6 +250,9 @@ public class TeamDetail {
 		
 	}
 	
+	/**
+	 * NC 다이노스 선수단 목록입니다.
+	 */
 	private static void dinosDetail() {
 
 		System.out.println("\t\t\t\t\t\t 7. NC 다이노스 선수 목록");
@@ -251,6 +278,9 @@ public class TeamDetail {
 		
 	}
 	
+	/**
+	 * KT 위즈 선수단 목록입니다.
+	 */
 	private static void wizDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 8. KT 위즈 선수 목록");
@@ -275,6 +305,9 @@ public class TeamDetail {
 		
 	}
 	
+	/**
+	 * 삼성 라이온즈 선수단 목록입니다.
+	 */
 	private static void lionsDetail() {
 
 		System.out.println("\t\t\t\t\t\t 9. 삼성 라이온즈 선수 목록");
@@ -299,7 +332,9 @@ public class TeamDetail {
 		
 	}
 	
-	
+	/**
+	 * 한화 이글스 선수단 목록입니다.
+	 */
 	private static void eaglesDetail() {
 		
 		System.out.println("\t\t\t\t\t\t 10. 한화 이글스 선수 목록");

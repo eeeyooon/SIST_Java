@@ -9,11 +9,18 @@ import com.project.sports.input.BannedWord;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 금지어 관리 메뉴 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class AdminBannedWord {
 	
 
 	public static List<BannedWord> BannedWordList = new ArrayList<BannedWord>();
-	
+	/**
+	 * 금지어 관리 메뉴를 출력하고 사용자가 선택한 메뉴로 이동합니다.
+	 */
 	public static void bannedWord() {
 	//ArrayList<BannedWord> bannedWordList;
 		

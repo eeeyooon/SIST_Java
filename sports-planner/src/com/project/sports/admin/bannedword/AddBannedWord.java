@@ -4,12 +4,17 @@ import java.util.Scanner;
 import com.project.sports.input.BannedWord;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
-
+/**
+ * 금지어 등록 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class AddBannedWord {
-
-	//public static ArrayList<BannedWord> bannedWordList;
+	
+	/**
+	 * 등록할 금지어를 입력받고 금지어 리스트에 추가합니다.
+	 */
 	public static void addBannedWord () {
-		
 		//등록됨. -> txt파일에 save하는건 아직 안함!
 		
 		

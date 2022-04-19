@@ -5,8 +5,15 @@ import com.project.sports.input.BannedWord;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 금지어 삭제 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class DeleteBannedWord {
-
+	/**
+	 * 삭제할 금지어의 번호를 입력받고 그 금지어를 삭제합니다.
+	 */
 	public static void deleteBannedWord() {
 
 		Scanner sc = new Scanner(System.in);

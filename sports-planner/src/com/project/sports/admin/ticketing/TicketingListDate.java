@@ -6,8 +6,15 @@ import com.project.sports.input.Ticketing;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 날짜 검색 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class TicketingListDate {
-
+	/**
+	 * 사용자가 입력한 날짜의 경기 예매내역을 출력합니다.
+	 */
 	public static void dateSearch() { //날짜 검색
 		
 		

@@ -3,8 +3,15 @@ package com.project.sports.user.infoMenu;
 import java.util.Scanner;
 import com.project.sports.output.Output;
 
+/**
+ * 정보 메뉴 클래스입니다.
+ * @author 강지윤
+ *
+ */
 public class InfoMenu {
-	
+	/**
+	 * 정보 메뉴를 출력하고 사용자가 선택한 메뉴로 이동합니다.
+	 */
 	public static void selectInfo () {
 		
 	

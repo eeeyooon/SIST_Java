@@ -6,8 +6,15 @@ import com.project.sports.input.Ticketing;
 import com.project.sports.main.Data;
 import com.project.sports.output.Output;
 
+/**
+ * 아이디 검색 클래스입니다.
+ * @author jiyoon
+ *
+ */
 public class TicketingListId {
-
+	/**
+	 * 사용자가 입력한 아이디의 회원이 예매한 내역을 출력합니다.
+	 */
 	public static void idSearch () { //아이디 검색
 		
 		
