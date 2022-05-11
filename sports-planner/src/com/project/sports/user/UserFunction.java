@@ -86,7 +86,9 @@ public class UserFunction {
 		while(menuFlag) { 
 			
 			realTimeRank();
-			bigMatch();
+			//bigMatch();
+			//데이터가 저장된 기한을 지나자 nullpoint에러떠서 오늘의 빅매치 안뜨게 해놓음.
+			
 			Output.mainMenu(); //메인메뉴 선택
 			String input = sc.nextLine();
 			
