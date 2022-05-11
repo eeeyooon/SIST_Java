@@ -24,7 +24,7 @@ public class DBUtil {
 			return conn;
 			
 			
-		 } catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("DBUtil.open");
 			e.printStackTrace();
 		}
